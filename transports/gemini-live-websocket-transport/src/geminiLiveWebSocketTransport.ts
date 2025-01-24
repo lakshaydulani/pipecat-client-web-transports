@@ -70,7 +70,7 @@ export class GeminiLiveWebsocketTransport extends RealTimeWebsocketTransport {
       return;
     }
     const base_url = `wss://${HOST}/ws/${BIDI_PATH}`;
-    this._ws = new ReconnectingWebSocket(`${base_url}?key=${apiKey}`);
+    this._ws = new ReconnectingWebSocket(`ws://localhost:8000`);
     // don't run the keep alive interval until we determine if there's an api for it
     this._ws.keepAliveInterval = 0;
   }
